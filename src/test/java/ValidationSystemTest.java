@@ -20,21 +20,20 @@ public class ValidationSystemTest {
 
     @Test
     public void testValidateString () throws ValidationFailedException {
-        ValidationSystem.validate(“Hello");
-                ValidationSystem.validate(“Hello world, abc");
+        ValidationSystem.validate("Hello");
+                ValidationSystem.validate("Hello world, abc");
     }
 
     @Test (expected = ValidationFailedException.class)
     public void testValidateStringFails() throws ValidationFailedException {
-        ValidationSystem.validate(“hello");
+        ValidationSystem.validate("heLlo");
     }
 
     @Test (expected = ValidationFailedException.class)
     public void testValidateStringFails2() throws ValidationFailedException {
-        ValidationSystem.validate(“”);
+        ValidationSystem.validate("");
     }
 
 
 }
 
-}
