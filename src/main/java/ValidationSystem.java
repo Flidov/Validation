@@ -1,24 +1,15 @@
 
-
-
-public class ValidationSystem<T> {
-    protected T enter;
-
-    private ValidationSystem(T enter) {
-        this.enter = enter;
+public class ValidationSystem {
+    static <T> Validator  create (T enter){
+        if (enter instanceof Integer){
+        return new IntegerValidator();}
+        if (enter instanceof String){
+        return new StringValidator();}
+        else throw new RuntimeException("incorrect class ");
     }
+
 
     public static <T> void validate(T enter) throws ValidationFailedException {
-
-        if (enter instanceof Integer) {
-            Validator <Integer> a = new  IntegerValidator();
-            a.validateEnter((Integer) enter);
-        }
-        if (enter instanceof String) {
-            Validator<String> a = new StringValidator();
-            a.validateEnter((String) enter);
-        }
-    }
-
-
+        create(enter).validateEnter(enter);
+     }
 }

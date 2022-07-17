@@ -1,4 +1,4 @@
-public  class IntegerValidator <T>implements Validator<T> {
+public  class IntegerValidator implements Validator<Integer> {
 
     public static Integer validate(Integer enter) throws ValidationFailedException {
         if (enter > 0 && enter < 11) {
@@ -7,8 +7,8 @@ public  class IntegerValidator <T>implements Validator<T> {
     }
 
     @Override
-    public  void validateEnter(T enter) throws ValidationFailedException {
-            validate((Integer) enter);
+    public  void validateEnter(Integer enter) throws ValidationFailedException {
+            validate( enter);
     }
 
 

@@ -1,7 +1,7 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class StringValidator <T> implements Validator<T>{
+public class StringValidator  implements Validator<String>{
     public static String validate (String enter) throws ValidationFailedException {
         Pattern pattern = Pattern.compile("^[A-Z]");
         Matcher matcher = pattern.matcher(enter);
@@ -11,8 +11,8 @@ public class StringValidator <T> implements Validator<T>{
     }
 
     @Override
-    public  void validateEnter(T enter) throws ValidationFailedException {
-        validate((String) enter);
+    public  void validateEnter(String enter) throws ValidationFailedException {
+        validate( enter);
     }
 }
 
