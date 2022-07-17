@@ -2,7 +2,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringValidator  implements Validator<String>{
-    public static String validate (String enter) throws ValidationFailedException {
+    private static String validate (String enter) throws ValidationFailedException {
         Pattern pattern = Pattern.compile("^[A-Z]");
         Matcher matcher = pattern.matcher(enter);
         if (matcher.find())

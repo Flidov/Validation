@@ -1,6 +1,6 @@
 public  class IntegerValidator implements Validator<Integer> {
 
-    public static Integer validate(Integer enter) throws ValidationFailedException {
+    private static Integer validate(Integer enter) throws ValidationFailedException {
         if (enter > 0 && enter < 11) {
             return enter;
         } else throw new ValidationFailedException("неверный интервал");
